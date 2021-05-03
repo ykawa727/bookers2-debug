@@ -38,12 +38,12 @@
             </td>
           <% end %>
           <!-- コメント機能 -->
-          コメント件数：<%= @book.post_comments.count %>
+          <td>コメント件数：<%= @book.book_comments.count %></td>
         </tr>
 
         <tr>
-          <% @book.post_comments.each do |b| %>
-          <td><%= image_tag(b.user.profile_image) %></td>
+          <% @book.book_comments.each do |b| %>
+          <td><%= attachment_image_tag(b.user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %></td>
           <td><%= b.user.name %></td>
           <td><%= b.comment %></td>
           <% end %>
