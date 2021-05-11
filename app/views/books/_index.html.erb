@@ -18,9 +18,11 @@
         <td><%= book.body %></td>
 
         <!-- いいね機能 -->
-                  <!-- いいね機能 -->
-        <td class="favorite-btn">
-          <%= render 'favorites/favorite-btn', book: @book %>
+        <td>
+          <div id="favorite-btn_<%= book.id %>">
+            <%= render 'favorites/favorite-btn', book: book %>
+          </div>
+
         </td>
         <!-- コメント機能 -->
         <td>
