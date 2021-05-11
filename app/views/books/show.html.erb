@@ -24,13 +24,14 @@
           <% end %>
 
           <!-- いいね機能 -->
-          <td class="favorite-btn">
+          <td id="favorite-btn">
             <%= render 'favorites/favorite-btn', book: @book %>
           </td>
-          <!-- コメント機能 -->
+          
+          <!-- コメント件数表示 -->
           <td>コメント件数：<%= @book.book_comments.count %></td>
         </tr>
-
+        <!-- コメント機能 -->
         <% @book.book_comments.each do |b| %>
         <tr>
           <td>
@@ -48,6 +49,7 @@
           <% end %>
         </tr>
         <% end %>
+        
       </table>
       <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
         <%= f.text_area :comment %>
